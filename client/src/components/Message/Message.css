@@ -1,0 +1,26 @@
+.my_message{
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width:200px;
+	height:70px;
+	border-top-right-radius: 20px;
+	border-bottom-right-radius: 100px;
+	border-top-left-radius: 60px;
+	border:2px solid #eee;
+	background: rgba(255,255,255,0.5);
+	cursor: pointer;
+	transition: all 0.3s ease;
+}
+
+.my_message-bottom{
+	transform: translate(0,50px);
+	border-radius: 30px;
+	width:20vw;
+}
+
+
+.my_message-top{
+	transform: translate(100px,-50px);
+}

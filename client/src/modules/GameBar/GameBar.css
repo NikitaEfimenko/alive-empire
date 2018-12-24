@@ -1,0 +1,50 @@
+
+.game-bar_container * {
+	margin-bottom: 8px;
+}
+.game-bar_container{
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: flex-end;
+}
+
+.game-bar{
+	width:20px;
+	border-radius: 10px;
+	border:3px solid #333;
+	position: absolute;
+	left:0;
+	bottom:0;
+}
+
+.game-bar-hero{
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+@keyframes rotate{
+	0%{
+		transform: rotate(0deg);
+	}
+	25%{
+		transform: rotate(30deg) scale(1.2);
+	}
+	75%{
+		transform: rotate(-30deg) scale(1.2);
+	}
+	100%{
+		transform: rotate(0deg);
+	}
+
+}
+
+
+.game-bar_container img:hover{
+	animation: rotate 1.5s infinite ease;
+	cursor: pointer;
+}
+
+

@@ -1,0 +1,28 @@
+.modal-layer{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: fixed;
+	width:50vh;
+	height:50vh;
+	left:50%;
+	top:50%;
+	border-radius: 10px;
+	background: rgba(255,255,255,0.5);
+	transform: translate(-50%,-50%);
+	z-index: 1000;
+}
+
+.modal-cross{
+	position: fixed;
+	right:0;
+	top:0;
+	cursor: pointer;
+	color:#050;
+	margin-top: 10px;
+	margin-right: 10px;
+}
+
+.inner-modal-layer{
+	position:relative;
+}

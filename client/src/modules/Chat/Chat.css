@@ -1,0 +1,40 @@
+.chat{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.input {
+	align-self: flex-end;
+	display: flex;
+	justify-content: center;
+	width: 10%;
+}
+
+.icon{
+	display: flex;
+	flex:1;
+	background: #333;
+	margin:2px;
+	border-bottom-left-radius: 30px;
+	border-top-left-radius: 10px;
+	border-bottom:4px solid #000;
+}
+
+.icon > p {
+	color:#FFF;
+}
+.message{
+	flex:5;
+	margin:3px;
+	display: flex;
+	background: rgba(255,255,255,0.7);
+}
+.textarea{
+	display: grid;
+	height: 150px;
+	overflow: auto;
+}
+.textarea::-webkit-scrollbar{
+	display: none;
+}

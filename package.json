@@ -12,6 +12,15 @@
   "license": "ISC",
   "dependencies": {
     "express": "^3.21.2",
-    "socket.io": "^2.2.0"
+    "socket.io": "^2.2.0",
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2",
+    "react-scripts": "1.1.5"
+  },
+    "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
   }
 }

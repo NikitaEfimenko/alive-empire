@@ -1,0 +1,7 @@
+.blur-container{
+	width:100vw;
+	height:100vh;
+	position:relative;
+	overflow: hidden;
+	transition: all 0.4s linear;
+}
