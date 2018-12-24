@@ -84,13 +84,28 @@ const Engine = (canvas) => {
 			cords = {x: Math.floor(x / cellSizeX), y: Math.floor(y / cellSizeY)}
 			intersection(x, y)
 		});
+		canvas.addEventListener('touchmove',(event) =>{
+			const {x, y} = getCords(event)
+			cords = {x: Math.floor(x / cellSizeX), y: Math.floor(y / cellSizeY)}
+			intersection(x, y)
+		});
+		//
 		canvas.addEventListener('mousedown',(event) =>{
 			drawing()
 			canvas.addEventListener('mousemove', drawing);
 		});
+		canvas.addEventListener('touchstart',(event) =>{
+			drawing()
+			canvas.addEventListener('touchmove', drawing);
+		});
+		//
 		canvas.addEventListener('mouseup', () => {
 			canvas.removeEventListener('mousemove',drawing);
 		});
+		canvas.addEventListener('touchcancel', () => {
+			canvas.removeEventListener('mousemove',drawing);
+		});
+		//
 	}
 	init()
 
