@@ -27,21 +27,30 @@ import {
 
 import Engine from './engine'
 
+const sounds = [
+  'music/Polyphia G.O.A.T. (Official Music Video).mp3',
+  'music/Polyphia – O.D..mp3',
+  'music/Polyphia - Crush.mp3'
+]
 
-const playSounds = () => {
-  const sounds = [
-    'music/Polyphia G.O.A.T. (Official Music Video).mp3',
-    'music/Polyphia – O.D..mp3',
-    'music/Polyphia - Crush.mp3'
-  ]
-  const sound = new Howl({
-    src:sounds,
-    autoplay: true,
-    volume: 0.9,
-  });
+const Music = (sounds) => {
+  let id = 0;
+  const count = sounds.length
+  const howlers = sounds.map(x => new Howl({
+    src:x,
+    volume:0.9,
+    onend: function(){
+      id = (id + 1) % count
+      howlers[id].play()
+    }
+  }))
+  const play = () => howlers[0].play()
+  return {
+    play
+  }
 }
 
-playSounds()
+Music(sounds).play()
 
 
 const iconUrls = ['./icon1.png','./icon2.png','./icon3.png']

@@ -11,7 +11,6 @@ import {
   sendPlayerInfo
 } from '../../actions'
 
-
 const InitModal = ({isLogin, login, configs, ...props}) => {
   return (
 		 <Modal appear={true}  close={login} to='/game' closeKey={13}>

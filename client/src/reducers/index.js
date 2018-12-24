@@ -7,7 +7,9 @@ import {
 	ADD_SOCKET,
 	LOGIN,
 	LOGOUT,
-	SHOW_STATISTICS
+	SHOW_STATISTICS,
+	JOKE,
+	IRONY
 } from '../constants'
 
 const initState = {
@@ -18,12 +20,30 @@ const initState = {
 	statistics: [0,0,0]
 }
 
+const phrases = [
+	"предатель!!!", 
+	"да,да брось нас в самый важный момент...", 
+	"трусливая букашка!!!",
+	"От меня и то 'БОЛЬШЕ' толку",
+	"Одноклеточное!!!"
+	]
+const phrase = [
+	"Серьезно?! ты не можешь закрыть окно? А хочешь победить в 'бесконечной войне'?=)))",
+	"Ну и глуповат ты...=)",
+	"Молодец!!! ты это сделал!!!"
+]
+
 const rootReducer = (state = initState, action) => {
 	switch(action.type){
 		case SELECT_NAME:
 			return {
 				...state,
 				name: action.payload
+			}
+		case JOKE:
+			return {
+				...state,
+				message: phrases[Math.floor(Math.random() * phrases.length)]
 			}
 		case SHOW_STATISTICS:
 			return {
@@ -35,6 +55,12 @@ const rootReducer = (state = initState, action) => {
 				...state,
 				isLogin: true
 			}
+		case IRONY:{
+			return {
+				...state,
+				message: !state.isLogin ? phrase[Math.floor(Math.random() * phrase.length)]: state.message
+			}
+		}
 		case LOGOUT:
 			return{
 				...state,

@@ -2,9 +2,9 @@ import React from 'react'
 import './ChatInput.css'
 import { connect } from 'react-redux'
 import { postMessage, sendMessage } from '../../actions'
-import {
-	Input
-} from 'reactstrap'
+import { focusInit } from '../../libs/config'
+import posed from 'react-pose'
+const Input = posed.input(focusInit)
 
 const ChatInput = ({postMessage, socket, sendMessage}) => {
 	const handle = event => {
@@ -15,7 +15,7 @@ const ChatInput = ({postMessage, socket, sendMessage}) => {
 		}
 	}
 	return (
-		<Input className='w-50' placeholder='ЧАТ' onKeyDown={handle}/>
+		<Input className='input-field' placeholder='ЧАТ' onKeyDown={handle}/>
 	)
 }
 

@@ -6,7 +6,9 @@ import {
 	NEW_PLAYERS,
 	ADD_SOCKET,
 	LOGIN,
-	SHOW_STATISTICS
+	SHOW_STATISTICS,
+	JOKE,
+	IRONY
 } from '../constants'
 
 export const selectRace = (name) => {
@@ -22,6 +24,12 @@ export const login = () => {
 	}
 }
 
+export const irony = () => {
+	return {
+		type:IRONY
+	}
+}
+
 
 
 export const sendMessage = (socket, message) => {
@@ -30,8 +38,13 @@ export const sendMessage = (socket, message) => {
 	}
 }
 
+export const joke = () => {
+	return {
+		type: JOKE
+	}
+}
 
-export const postMessage = (message) => {
+export const postMessage = (message, time = 2) => {
 		return {
 			type:POST_MESSAGE,
 			payload: message

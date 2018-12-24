@@ -76,7 +76,7 @@ io.sockets.on('connection', socket => {
 		io.sockets.emit('render', engine.get())
 		engine.epoch()
 		io.sockets.emit('statistics', engine.Statistics())
-	}, 100)
+	}, 75)
 	socket.on('send-login-info', data => {
 		players[socket.id] = data
 		io.sockets.emit('new-players', players)

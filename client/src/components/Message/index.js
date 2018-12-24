@@ -31,7 +31,7 @@ class MessageContainer extends Component{
 	componentDidUpdate(props, state){
 			if (this.state.is){
 				clearTimeout(this.id) 
-				this.id = setTimeout(this.close, 2000)
+				this.id = setTimeout(this.close, this.props.time)
 			}
 	}
 
@@ -50,13 +50,16 @@ class MessageN extends PureComponent {
 	render(){
 		const {text, placement} = this.props
 		return(
-			<MessageContainer>
+			<MessageContainer time={this.props.time}>
 				<Message text={text} placement={placement}/>
 			</MessageContainer>
 		)
 	}
 }
 
+MessageN.defaultProps = {
+	time: 4000
+}
 
 export {
 	MessageN as Message

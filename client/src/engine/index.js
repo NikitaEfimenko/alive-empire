@@ -14,7 +14,7 @@ const argmax = array => {
 const Engine = (canvas) => {
 	const cellSizeX = Math.floor(canvas.width / 80)
 	const cellSizeY = Math.floor(canvas.height / 60)
-	const shadowSize = Math.min(cellSizeY, cellSizeX) * 1.7;
+	const shadowSize = Math.min(cellSizeY, cellSizeX);
 	const w = 80
 	const h = 60
 	const _ctx = canvas.getContext('2d')
@@ -119,7 +119,7 @@ const Engine = (canvas) => {
 		const shadow = configs[id].shadow
 		if (shadow){
 			_ctx.beginPath()
-			_ctx.fillStyle = `rgba(${shadow.r},${shadow.g},${shadow.b},0.13)`
+			_ctx.fillStyle = `rgba(${shadow.r},${shadow.g},${shadow.b},0.18)`
 			_ctx.arc((i + 0.8)*cellSizeX, (j + 0.8)*cellSizeY, shadowSize, 0, 2*Math.PI)
 			_ctx.fill()
 		}	
@@ -129,7 +129,7 @@ const Engine = (canvas) => {
 		_ctx.clearRect(0, 0, canvas.width, canvas.height)
 		for (let i = 0; i < w; ++i){
 			for (let j = 0; j < h; ++j){
-				world[i + j*w].alive ? draw(i,j) : draw1(i,j)
+				world[i + w*j].alive ?  draw(i,j):  draw1(i,j)
 			}
 		}
 	}

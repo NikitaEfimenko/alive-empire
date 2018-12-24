@@ -1,0 +1,13 @@
+.input-field{
+	text-align-last:center;
+    width: 50vw;
+    height: 40px;
+    border-radius:20px;
+    font-family: DiscFont
+}
+.input-field:focus {
+	color: #FFF;
+    outline: none;
+    border:none;
+    box-shadow: none;
+}
