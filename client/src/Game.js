@@ -41,7 +41,7 @@ const playSounds = () => {
   });
 }
 
-//playSounds()
+playSounds()
 
 
 const iconUrls = ['./icon1.png','./icon2.png','./icon3.png']
