@@ -4,7 +4,6 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "cd client && npm run build && cd .. && node server.js",
     "start": "node server.js",
     "heroku-postbuild": "cd client && npm install && npm run build"
   },
@@ -18,10 +17,7 @@
     "react-scripts": "1.1.5"
   },
   "scripts": {
-    "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
   }
 
 }
