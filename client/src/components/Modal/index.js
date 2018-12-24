@@ -37,7 +37,7 @@ class Modal extends Component {
 		const { children } = this.props
 		return (  
 			this.props.appear &&
-			<div onKeyDown={this.keyClose} className='modal-layer'>
+			<div onKeyDown={this.keyClose} className={`modal-layer ${this.props.className}`}>
 				<Container className='inner-modal-layer'>
 					{this.props.isLogin ? <Cross handler={this.handler} />: <JokedCross handler={this.handler} />}
 					{ children }

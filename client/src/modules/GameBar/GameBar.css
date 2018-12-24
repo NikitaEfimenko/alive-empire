@@ -18,6 +18,10 @@
 	bottom:0;
 }
 
+.about-icon{
+	animation: shake 2s infinite ease !important;
+}
+
 .game-bar-hero{
 	position: relative;
 	display: flex;
@@ -30,10 +34,10 @@
 		transform: rotate(0deg);
 	}
 	25%{
-		transform: rotate(30deg) scale(1.2);
+		transform: rotate(30deg) scale(1.1);
 	}
 	75%{
-		transform: rotate(-30deg) scale(1.2);
+		transform: rotate(-30deg) scale(1.1);
 	}
 	100%{
 		transform: rotate(0deg);
@@ -42,8 +46,8 @@
 }
 
 
-.game-bar_container img:hover{
-	animation: rotate 1.5s infinite ease;
+.game-bar_container img{
+	animation: rotate 2s infinite ease;
 	cursor: pointer;
 }
 

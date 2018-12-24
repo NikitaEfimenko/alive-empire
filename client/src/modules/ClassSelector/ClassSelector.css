@@ -12,6 +12,14 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	text-align: justify;
+	background: rgba(40,40,40,0.1);
+	border-radius: 20px;
+}
+
+.description{
+	color: #FFF;
+	text-shadow: 2px 2px 0 #000000, 2px -2px 0 #4074b5, -2px 2px 0 #4074b5, -2px -2px 0 #4074b5, 2px 0px 0 #4074b5, 0px 2px 0 #4074b5, -2px 0px 0 #4074b5, 0px -2px 0 #4074b5;
 }
 
 .heroes{
@@ -22,8 +30,8 @@
 }
 
 .heroes:hover{
-	 transform: scale(0.8);
-	 cursor: pointer;
+	transform: scale(0.8);
+	cursor: pointer;
 }
 
 .heroes_selected{

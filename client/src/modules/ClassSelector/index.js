@@ -36,7 +36,7 @@ const  ClassSelector =  (props) => {
 				</Container>
 				{ description &&
 					<Container className='class-selector__description'>
-						<p className='discription-text'>{descriptions[props.race]}</p>
+						<p className='discription-text description'>{descriptions[props.race]}</p>
 					</Container>
 				}
 			</Container>

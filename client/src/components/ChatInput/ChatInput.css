@@ -3,7 +3,7 @@
     width: 50vw;
     height: 40px;
     border-radius:20px;
-    font-family: DiscFont
+    font-family: DiscFont;
 }
 .input-field:focus {
 	color: #FFF;

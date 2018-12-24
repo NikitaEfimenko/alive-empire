@@ -2,7 +2,7 @@ import React, { createRef, Component, Fragment } from 'react';
 import { connect } from 'react-redux'
 import { Button, Container } from 'reactstrap'
 import io from 'socket.io-client'
-import { Route, withRouter } from 'react-router-dom'
+import { Route, withRouter, Switch } from 'react-router-dom'
 import {Howl, Howler} from 'howler'
 import './Game.css'
 import {
@@ -15,7 +15,8 @@ import {
 } from './components'
 
 import {
-  InitModal
+  InitModal,
+  AboutModal
 } from './containers'
 
 import { 
@@ -25,7 +26,9 @@ import {
   sendMousePosition
 } from './actions'
 
+
 import Engine from './engine'
+import './animate.css'
 
 const sounds = [
   'music/Polyphia G.O.A.T. (Official Music Video).mp3',
@@ -52,6 +55,11 @@ const Music = (sounds) => {
 
 Music(sounds).play()
 
+const description = {
+  blue:'Хоть и некрасивые, но очень милые создания. Очень быстрые 0.00000000001231412 см/год и это не предел!',
+  red:'Выглядят как болванчики, но это обман. Нет они и впрямь очень глупые, но очень сильные. Осторожно!!! (Второе имя "Тупикус Коляндриусис"',
+  green:"Очень стесняются общаться в обществе, полные интроверты, но плодятся как кролики (привет всем стесняшкам)"
+}
 
 const iconUrls = ['./icon1.png','./icon2.png','./icon3.png']
 const iconObj = {blue:'./icon1.png',red:'./icon2.png',green:'./icon3.png'}
@@ -64,7 +72,7 @@ const rules = [{name:'blue',image: images[0],shadow:shadow['blue']}, {name:'red'
 
 const configs = {
   urls: iconUrls,
-  descriptions: {blue:'супер быстрые',red:'супер сильные',green:"супер плодовитые"}
+  descriptions: description
 }
 
 
@@ -112,9 +120,12 @@ change = () => {
     const  color = shadow[this.props.race]
     return (
       <Fragment>
-        <Route exact path='/' render={ () => {
+        <Switch>
+          <Route exact path='/' render={ () => {
             return <InitModal isLogin = {this.props.isLogin} login = {this.login} configs = {configs} />
-        }}/>
+            }}/>
+          <Route path='/about' component={AboutModal}/>
+        </Switch>
         <BlurContainer  kernel={14} is={!this.props.isLogin}>
           <div  className='h-100 w-100 background tools'>
             <canvas  ref={this._canvas}/>

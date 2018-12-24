@@ -26,13 +26,11 @@
 	text-align: center;
 }
 
-.statistics img{
-	transition: all 0.4s ease;
-}
+
 
 .statistics img:hover{
-	transform: scale(1.2);
 	cursor: pointer;
+	animation: shake 2s linear;
 }
 
 .statistics p{
